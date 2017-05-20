@@ -14,16 +14,28 @@ I want to emphasize that deep learning has become a crucial part of NLP studies,
 
 After an extensive introduction, I now, proceed to details of my research.
 
-My aim in this research is to analyze the Twitter network of Istanbul Sehir Univesity using various NLP methods. First, I constructed the Sehir Tweeter Network (STN) then, proceed analysis. The methods I utilized throughout the analysis are as follows (in order).
+My aim in this research is to analyze the Twitter network of Istanbul Sehir Univesity using various NLP methods. First, I constructed the Sehir Tweeter Network (STN) and then, proceed to NLP analysis. The methods I utilized through the analysis are as follows (in order).
 
 * Determine what are the most popular topics within STN using **latent dirichlet allocation**
-* Construct a label prediction model to categorize tweets using **fasttext and basic neural networks**
+* Construct a label prediction model to categorize tweets using **fasttext** and **basic neural networks**
 * Test the coherency (performance) of our prediction model using **LSTM networks**
 * Assign a label to each tweet then, analyze the distribution of categories within STN
 
 In the last part of this post, I mentioned certain points that can be improved to take this analyzes into an higher level.
 
 # Network Construction
+
+# Natural Language Processing Analysis
+
+## Topic Determination
+
+## Label prediction
+
+### Text Generation to Test the Prediction Model
+
+## Network Graph Analysis
+
+# Future Work
 
 You can use the [editor on GitHub](https://github.com/skagankose/skagankose.github.io/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
 
