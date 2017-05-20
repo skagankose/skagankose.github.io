@@ -1,8 +1,11 @@
 # Introduction
 
-Social media usage is significantly increased in recent years. According to [Smart Insights](http://www.smartinsights.com/social-media-marketing/social-media-strategy/new-global-social-media-research/), 482 million people joined social networks since January 2016. There is an enormous amount of data provided by individuals on social networks. This data allows the examination of the community.
+Social media usage is significantly increased in recent years. According to [Smart Insights](http://www.smartinsights.com/social-media-marketing/social-media-strategy/new-global-social-media-research/), 482 million people joined social networks since the last year. There is an enormous amount of data created by these individuals. And, this data provides an unique opportunity to analyze societies.
 
-social networks that hold significant informations in it. To extract these information, various natural language processing (NLP) techniques are highly popular. They can be used to determine what people are talking about, what are their interests, their characteristics. Using recurrent neural networks, it is even possible to mimic users within social networks.
+Within the field of Natural Language Processing, there are highly effective techniques to extract meaningful informations from the pile of data that social networks hold. To learn 
+
+
+reveal the significant informations that social networks holds, various natural language processing (NLP) techniques are highly popular. They can be used to determine what people are talking about, what are their interests, their characteristics. Using recurrent neural networks, it is even possible to mimic users within social networks.
 In this paper, we analyzed the Twitter network of Istanbul Sehir Univesity using various NLP methods. More specifically, we tried to determine what are the most popular topics within the network. We analyze individuals and tried to determine what are they tweeting about. Furthermore, we study different different regions and individuals within the Sehir University network.
 The organization of the rest of the paper is as follows. In section 2, we explained the methods that we used throughout the paper, Next, we present and interpret our results. In part 4, we conclude and restated important findings. Then, we mentioned couple of future work that we believe can take this study to a higher level.
 
