@@ -2,7 +2,12 @@
 
 Social media usage is significantly increased in recent years. According to [Smart Insights](http://www.smartinsights.com/social-media-marketing/social-media-strategy/new-global-social-media-research/), 482 million people joined social networks since the last year. There is an enormous amount of data created by these individuals. And, this data provides an unique opportunity to analyze societies.
 
-Within the field of Natural Language Processing, there are highly effective techniques to extract meaningful informations from the pile of data that social networks hold. To learn 
+Within the field of Natural Language Processing (NLP), there are highly effective techniques to extract meaningful informations from the pile of data. There are terrific sources to learn more about NLP.
+
+- [Introduction to Natural Language Processing](http://blog.algorithmia.com/introduction-natural-language-processing-nlp/) by Algorithmia
+- [Natural Language Processing with Deep Learning](http://web.stanford.edu/class/cs224n/) by Stanford
+
+I want to mention that deep learning has become a crucial part of NLP studies, especially after the paper [Natural Language Processing (almost) from Scratch](https://arxiv.org/abs/1103.0398). Consequently, deep learning is (almost) a pre-requisite for studying NLP. There 
 
 
 reveal the significant informations that social networks holds, various natural language processing (NLP) techniques are highly popular. They can be used to determine what people are talking about, what are their interests, their characteristics. Using recurrent neural networks, it is even possible to mimic users within social networks.
