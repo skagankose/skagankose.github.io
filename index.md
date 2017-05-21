@@ -55,11 +55,12 @@ To assign a certain topic distribution to each user, I used their tweets. I assi
 
 First, I retrieved last 200 tweets of each user within STN and excluded the tweets posted before 2017 for the sake of up-to-dateness. I consider the collection of tweets that belongs to a certain user, as a single document and run the LDA model accordingly. Frequent words, within each resulting clusters, are presented in the Table 1. I decided that four is an appropriate number for distinct clusters. This means that there are four distinguishable popular topics within STN. Code for [retrieving tweets](https://github.com/skagankose/sehirTweets/blob/master/fetchAndClean.py). and [LDA](https://github.com/skagankose/sehirTweets/blob/master/customizedLDA.py) can be accessed.
 
-> I wanted to point out that the code for fetching tweets uses two separate code files.
+> I wanted to point out that the code for fetching tweets utilizes two other code files.
 > The [first file](https://github.com/skagankose/sehirTweets/blob/master/tweetDumper.py) is for retrieving recent tweets of users within STN.
-> And retrieved tweets are cleaned (e.g. stop words are removed), using the [second file](https://github.com/skagankose/sehirTweets/blob/master/tweetCleaner.py).
+> And retrieved tweets are cleaned (e.g. stop words are removed) using the [second file](https://github.com/skagankose/sehirTweets/blob/master/tweetCleaner.py).
 
 ![STN Graph](skagankose.github.io/images/frequentWords.png)
+
 *Table 1: Frequent words belonging to clusters found using LDA with appropriate titles assigned to them.*
 
 By examining the most frequent words belonging to clusters, I assign a title to each of them. For the rest of the study, I consider these categories as four (plausible) labels for tweets.
