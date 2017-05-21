@@ -16,8 +16,8 @@ After an extensive introduction, I now, proceed to details of my research.
 
 My aim in this research is to analyze the Twitter network of Istanbul Sehir Univesity using various NLP methods. First, I constructed the Sehir Tweeter Network (STN) and then, proceed to NLP analysis. The methods I utilized through the analysis are as follows (in order).
 
-- Determine what are the most popular topics within STN using *latent dirichlet allocation**
-- Construct a label prediction model to categorize tweets using *fasttext** and *basic neural networks*
+- Determine what are the most popular topics within STN using *latent dirichlet allocation*
+- Construct a label prediction model to categorize tweets using *fasttext* and *basic neural networks*
 - Test the coherency (performance) of our prediction model using *LSTM networks*
 - Assign a label to each tweet then, analyze the distribution of categories within STN
 
@@ -25,25 +25,31 @@ In the last part of this post, I will mention certain points that can be improve
 
 # Network Construction
 
-I started with construction of the Sehir University's Twitter network (STN). I use snowball sampling meaning that I collected the friends of my friends. A list of my friends can be found [here](https://github.com/skagankose/sehirTweets/blob/master/data/coreUsers.txt). By saying friends, I mean followers and followees. [Here](https://github.com/skagankose/sehirTweets/blob/master/collectUsers.py) is the code I wrote.
+I started with construction of the Sehir University's Twitter network (STN). I use snowball sampling meaning that I collected the friends of my friends. [Here](https://github.com/skagankose/sehirTweets/blob/master/collectUsers.py) is the code for that. And, a list of my friends can be found [here](https://github.com/skagankose/sehirTweets/blob/master/data/coreUsers.txt). By saying friends, I mean followers and followees.
 
-The network, in this stage, had many users that are not (actually) belong to Sehir University. I determined that the users with at least 3 followers and 3 followees, within the current network, are realted to Sehir University. So, all the users who had less than 3 followers and 3 followings, are removed.
+The data, in this stage, had many users that are not (actually) belong to Sehir University. I see that the users with at least 3 followers and 3 followees, within the current network, are (actually) realted to Sehir University. So, all the users who had less than 3 followers and 3 followees, are removed. Then, the network is constructed with remaining users. The code for that is [here](https://github.com/skagankose/sehirTweets/blob/master/createGraph.py).
 
-The resulting network composed of 1,382 nodes (users) and 27,118 directed edges (according to followers and followees). Here is the graph.
+The resulting network composed of 1,353 nodes (users) and 26,439 directed edges (according to followers and followees). Here is the graph.
 
 ![STN Graph](skagankose.github.io/images/pageRank.png)
 
 *Figure 1: Sehir University's Twitter network with PageRank based representation (where big nodes mean high popularity)*
 
-Note that the color and the size of the nodes are according to [PageRank](http://ilpubs.stanford.edu:8090/422/1/1999-66.pdf) centrality score.
+Note that colors and sizes of nodes are arranged according to [PageRank](http://ilpubs.stanford.edu:8090/422/1/1999-66.pdf) centrality score.
+
+> I want to reserve couple of sentences to mention about the program I used for drawing graphs.
+> I used [Gephi](https://gephi.org) through-out the project, which is one of the leading visualization and exploration software for all kinds of graphs and networks.
+> It is open-source and free.
 
 # Natural Language Processing Analysis
 
-After retrieving tweets, I moved onto the analysis.
+After retrieving tweets, I moved onto the analysis part.
 
 ## Topic Determination
 
-To assign a certain topic distribution to each user, first, we labeled each of their tweets. The problem here though, we didn't know which label to use. To this respect, first, we analyzed the STN using a topic modeling algorithm, more specifically, latent dirichlet allocation (LDA). We won't go into details of LDA for the sake of simplicity. To earn more about LDA see [2]. By using LDA, we were able extract four main topics popular among Sehir members.
+To assign a certain topic distribution to each user, I used their tweets. I assign a label to each tweet then, calculated frequency of categories. The first obstacle was that I didn't know which label to use meaning that I didn't know how to categorize tweets within Sehir University. To solve that,
+
+we analyzed the STN using a topic modeling algorithm, more specifically, latent dirichlet allocation (LDA). We won't go into details of LDA for the sake of simplicity. To earn more about LDA see [2]. By using LDA, we were able extract four main topics popular among Sehir members.
 
 ## Label prediction
 
