@@ -32,13 +32,17 @@ The network, in this stage, had many users that are not (actually) belong to Seh
 The resulting network composed of 1,382 nodes (users) and 27,118 directed edges (according to followers and followees). Here is the graph.
 
 ![STN Graph](skagankose.github.io/images/pageRank.png)
-*Figure 1: Sehir University's Twitter network with PageRank based representation (where bigger nodes means higher popularity)*
+*Figure 1: Sehir University's Twitter network with PageRank based representation (where big nodes mean high popularity)*
 
 Note that the color and the size of the nodes are according to [PageRank](http://ilpubs.stanford.edu:8090/422/1/1999-66.pdf) centrality score.
 
 # Natural Language Processing Analysis
 
+After retrieving tweets, I moved onto the analysis.
+
 ## Topic Determination
+
+To assign a certain topic distribution to each user, first, we labeled each of their tweets. The problem here though, we didn't know which label to use. To this respect, first, we analyzed the STN using a topic modeling algorithm, more specifically, latent dirichlet allocation (LDA). We won't go into details of LDA for the sake of simplicity. To earn more about LDA see [2]. By using LDA, we were able extract four main topics popular among Sehir members.
 
 ## Label prediction
 
