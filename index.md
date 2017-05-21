@@ -66,6 +66,10 @@ By examining the most frequent words belonging to clusters, I assign a title to 
 
 ## Label prediction
 
+I used a neural network model to predict the labels of tweets. As a vector embedding, I used the [Turkish pre-trained model]((https://github.com/facebookresearch/fastText/blob/master/pretrained-vectors.md)) created using [FastText](https://arxiv.org/abs/1607.01759) algorithm.
+
+To train the model, I retrieved tweets from different accounts related to topics that we found. We will give more detail about these process in part 3. By using the trained model, we assign label to each tweet within STN. By using tagged tweets, we determined the distribution of four topics for each user. For build the model in this part, we used Keras which is an open source neural network library. (We have used the version backed by TensorFlow.)
+
 ## Text Generation to Test the Prediction Model
 
 1. Test text generation model
