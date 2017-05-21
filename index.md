@@ -33,7 +33,7 @@ The resulting network composed of 1,353 nodes (users) and 26,439 directed edges 
 
 ![STN Graph](skagankose.github.io/images/pageRank.png)
 
-*Figure 1: Sehir University's Twitter network with PageRank based representation (where big nodes mean high popularity)*
+*Figure 1: Sehir University's Twitter network with PageRank based representation (where big nodes mean high popularity).*
 
 Note that colors and sizes of nodes are arranged according to [PageRank](http://ilpubs.stanford.edu:8090/422/1/1999-66.pdf) centrality score.
 
@@ -47,9 +47,13 @@ After retrieving tweets, I moved onto the analysis part.
 
 ## Topic Determination
 
-To assign a certain topic distribution to each user, I used their tweets. I assign a label to each tweet then, calculated frequency of categories. The first obstacle was that I didn't know which label to use meaning that I didn't know how to categorize tweets within Sehir University. To solve that,
+To assign a certain topic distribution to each user, I used their tweets. I assign a label to each tweet then, calculated frequency of categories. The first obstacle was that I didn't know which label to use meaning that I didn't know how to categorize tweets within Sehir University. To solve that, I zsed a topic modeling algorithm, more specifically, [latent dirichlet allocation](http://ai.stanford.edu/~ang/papers/nips01-lda.pdf) (LDA). I won't go into details of LDA but I can simply state that it clusters similar words together for given documents. By using LDA, I were able extract the most popular (four) topics in Sehir University.
 
-we analyzed the STN using a topic modeling algorithm, more specifically, latent dirichlet allocation (LDA). We won't go into details of LDA for the sake of simplicity. To earn more about LDA see [2]. By using LDA, we were able extract four main topics popular among Sehir members.
+First, I retrieved last 200 tweets of each user within STN. I excluded the tweets posted before 2017, for the sake of up-to-dateness. I consider the collection of tweets that belongs to a certain user, as a single document and run the LDA model accordingly. Frequent words, within each resulting clusters, are presented in the Table 1. I decided that four is an appropriate number for distinct clusters. This means that there are four distinguishable popular topics within STN.
+
+![STN Graph](skagankose.github.io/images/frequentWords.png)
+
+*Table 1: Words belonging to clusters found using LDA with appropriate titles assigned to them.*
 
 ## Label prediction
 
