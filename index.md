@@ -37,9 +37,9 @@ The resulting network composed of 1,353 nodes (users) and 26,439 directed edges 
 
 Note that colors and sizes of nodes are arranged according to [PageRank](http://ilpubs.stanford.edu:8090/422/1/1999-66.pdf) centrality score.
 
-> I want to reserve couple of sentences to mention about the program I used for drawing graphs.
-> I used [Gephi](https://gephi.org) through-out the project, which is one of the leading visualization and exploration software for all kinds of graphs and networks.
-> It is open-source and free.
+> I want to reserve couple of sentences to mention the program that I used for drawing graphs which is [Gephi](https://gephi.org).
+> It is one of the leading visualization and exploration software for all kinds of graphs and networks.
+> Moreover, it is open-source and free.
 
 # Natural Language Processing Analysis
 
