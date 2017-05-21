@@ -49,11 +49,18 @@ After retrieving tweets, I moved onto the analysis part.
 
 To assign a certain topic distribution to each user, I used their tweets. I assign a label to each tweet then, calculated frequency of categories. The first obstacle was that I didn't know which label to use meaning that I didn't know how to categorize tweets within Sehir University. To solve that, I zsed a topic modeling algorithm, more specifically, [latent dirichlet allocation](http://ai.stanford.edu/~ang/papers/nips01-lda.pdf) (LDA). I won't go into details of LDA but I can simply state that it clusters similar words together for given documents. By using LDA, I were able extract the most popular (four) topics in Sehir University.
 
-First, I retrieved last 200 tweets of each user within STN. I excluded the tweets posted before 2017, for the sake of up-to-dateness. I consider the collection of tweets that belongs to a certain user, as a single document and run the LDA model accordingly. Frequent words, within each resulting clusters, are presented in the Table 1. I decided that four is an appropriate number for distinct clusters. This means that there are four distinguishable popular topics within STN.
+First, I retrieved last 200 tweets of each user within STN and excluded the tweets posted before 2017, for the sake of up-to-dateness. I consider the collection of tweets that belongs to a certain user, as a single document and run the LDA model accordingly. Frequent words, within each resulting clusters, are presented in the Table 1. I decided that four is an appropriate number for distinct clusters. This means that there are four distinguishable popular topics within STN. Code for [retrieving tweets](https://github.com/skagankose/sehirTweets/blob/master/fetchAndClean.py). and [LDA](https://github.com/skagankose/sehirTweets/blob/master/customizedLDA.py) can be accessed.
+
+> I wanted to point out that the code for fetching tweets uses two separate code files.
+> The [first file](https://github.com/skagankose/sehirTweets/blob/master/tweetDumper.py) is used to retrieves recent tweets of users within STN.
+> And retrieved tweets are cleaned (e.g. stop words are removed), using the [second file](https://github.com/skagankose/sehirTweets/blob/master/tweetCleaner.py).
 
 ![STN Graph](skagankose.github.io/images/frequentWords.png)
 
-*Table 1: Words belonging to clusters found using LDA with appropriate titles assigned to them.*
+*Table 1: Frequent words belonging to clusters found using LDA with appropriate titles assigned to them.*
+
+By examining the most frequent words within clusters, I assign a title to of them. For the rest of the study, I consider these categories as four (plausible) labels for tweets.
+
 
 ## Label prediction
 
