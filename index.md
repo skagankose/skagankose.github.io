@@ -59,8 +59,7 @@ First, I retrieved last 200 tweets of each user within STN and excluded the twee
 
 *Table 1: Frequent words belonging to clusters found using LDA with appropriate titles assigned to them.*
 
-By examining the most frequent words within clusters, I assign a title to of them. For the rest of the study, I consider these categories as four (plausible) labels for tweets.
-
+By examining the most frequent words belonging to clusters, I assign a title to each of them. For the rest of the study, I consider these categories as four (plausible) labels for tweets.
 
 ## Label prediction
 
