@@ -31,8 +31,10 @@ The network, in this stage, had many users that are not (actually) belong to Seh
 
 The resulting network composed of 1,382 nodes (users) and 27,118 directed edges (according to followers and followees). Here is the graph.
 
-![](https://github.com/skagankose/sehirTweets/blob/master/data/images/pageRank.png)
+![STN Graph](skagankose.github.io/images/pageRank.png)
 *Figure 1: Sehir University's Twitter network with PageRank based representation (where bigger nodes means higher popularity)*
+
+Note that the color and the size of the nodes are according to [PageRank](http://ilpubs.stanford.edu:8090/422/1/1999-66.pdf) centrality score.
 
 # Natural Language Processing Analysis
 
