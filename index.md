@@ -27,6 +27,10 @@ In the last part of this post, I will mention certain points that can be improve
 
 I started with construction of the Sehir University's Twitter network (STN). I use snowball sampling meaning that I collected the friends of my friends. [Here](https://github.com/skagankose/sehirTweets/blob/master/collectUsers.py) is the code for that. And, a list of my friends can be found [here](https://github.com/skagankose/sehirTweets/blob/master/data/coreUsers.txt). By saying friends, I mean followers and followees.
 
+> Note that to retrieve tweets from Twitter, you have to have a Twitter developer account.
+> Then to use API, it is required to create an application.
+> You may access more information from their [official website](https://dev.twitter.com).
+
 The data, in this stage, had many users that are not (actually) belong to Sehir University. I see that the users with at least 3 followers and 3 followees, within the current network, are (actually) realted to Sehir University. So, all the users who had less than 3 followers and 3 followees, are removed. Then, the network is constructed with remaining users. The code for that is [here](https://github.com/skagankose/sehirTweets/blob/master/createGraph.py).
 
 The resulting network composed of 1,353 nodes (users) and 26,439 directed edges (according to followers and followees). Here is the graph.
@@ -49,14 +53,13 @@ After retrieving tweets, I moved onto the analysis part.
 
 To assign a certain topic distribution to each user, I used their tweets. I assign a label to each tweet then, calculated frequency of categories. The first obstacle was that I didn't know which label to use meaning that I didn't know how to categorize tweets within Sehir University. To solve that, I zsed a topic modeling algorithm, more specifically, [latent dirichlet allocation](http://ai.stanford.edu/~ang/papers/nips01-lda.pdf) (LDA). I won't go into details of LDA but I can simply state that it clusters similar words together for given documents. By using LDA, I were able extract the most popular (four) topics in Sehir University.
 
-First, I retrieved last 200 tweets of each user within STN and excluded the tweets posted before 2017, for the sake of up-to-dateness. I consider the collection of tweets that belongs to a certain user, as a single document and run the LDA model accordingly. Frequent words, within each resulting clusters, are presented in the Table 1. I decided that four is an appropriate number for distinct clusters. This means that there are four distinguishable popular topics within STN. Code for [retrieving tweets](https://github.com/skagankose/sehirTweets/blob/master/fetchAndClean.py). and [LDA](https://github.com/skagankose/sehirTweets/blob/master/customizedLDA.py) can be accessed.
+First, I retrieved last 200 tweets of each user within STN and excluded the tweets posted before 2017 for the sake of up-to-dateness. I consider the collection of tweets that belongs to a certain user, as a single document and run the LDA model accordingly. Frequent words, within each resulting clusters, are presented in the Table 1. I decided that four is an appropriate number for distinct clusters. This means that there are four distinguishable popular topics within STN. Code for [retrieving tweets](https://github.com/skagankose/sehirTweets/blob/master/fetchAndClean.py). and [LDA](https://github.com/skagankose/sehirTweets/blob/master/customizedLDA.py) can be accessed.
 
 > I wanted to point out that the code for fetching tweets uses two separate code files.
-> The [first file](https://github.com/skagankose/sehirTweets/blob/master/tweetDumper.py) is used to retrieves recent tweets of users within STN.
+> The [first file](https://github.com/skagankose/sehirTweets/blob/master/tweetDumper.py) is for retrieving recent tweets of users within STN.
 > And retrieved tweets are cleaned (e.g. stop words are removed), using the [second file](https://github.com/skagankose/sehirTweets/blob/master/tweetCleaner.py).
 
 ![STN Graph](skagankose.github.io/images/frequentWords.png)
-
 *Table 1: Frequent words belonging to clusters found using LDA with appropriate titles assigned to them.*
 
 By examining the most frequent words belonging to clusters, I assign a title to each of them. For the rest of the study, I consider these categories as four (plausible) labels for tweets.
