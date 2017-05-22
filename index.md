@@ -122,8 +122,8 @@ Second, large nodes in the Art graph are concentrated around the center, meaning
 
 Moreover, in the Charity graph, it is seen that people who tweets about Charity are not concentrated in any specific region. Then, we can make the comment that there might be charitable people at all walks of Sehir University's society.
 
-Before finishing the interpretation of the graphs, I want to emphasize that daily conversations are evenly distributed across STN.
-> Although, this results is expected, I wanted to mention that for the sake of completeness.
+> Before finishing the interpretation of the graphs, I want to emphasize that daily conversations are evenly distributed across STN.
+> Although, this results is expected, I wanted to mention it for the sake of completeness.
 
 # Conclusion
 
