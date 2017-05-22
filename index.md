@@ -82,7 +82,7 @@ To test the accuracy of the model, we split the data into %80 and %20 for traini
 
 > I want to mention that the prediction model is created using [TensorFlow](https://www.tensorflow.org).
 > It is an open source software library for numerical computation using data flow graphs made by Google.
-> At this juncture, I want to indicate that in the context of this project, all the models related to deep neural networks is created using TensorFlow.
+> I also want to indicate that in the context of this project, all the models related to deep neural networks are created using TensorFlow.
 
 I used trained model to labeled each tweet within STN. Then, I found distribution of categories that a particular user tweets about by simply,  calculating the frequency of label within tweets belonging to a particular user. For each user, I calculated four different values each of which represents the frequency of a certain category. Then, I saved them to a CSV file to use them with Gephi. The code for that part is [here](https://github.com/skagankose/sehirTweets/blob/master/extendedPredictor.ipynb) (under the title "Predicting Labels").
 
