@@ -72,19 +72,13 @@ I used a (nearly) deep neural network model to assign a label to each tweet. As 
 To train the prediction model, I used 3 domain-specific Twitter accounts each of which corresponds to a category in Table 1.
 Last 3.000 tweets retrieved from each account (which makes 9.000 tweets for each category) then, the model is trained using these tweets by setting labels according to the belonging account. (For example, we label all the tweets retrieved from [NTV Kültür Sanat](https://twitter.com/ntvkultursanat) as "art".) Again, I used this [code](https://github.com/skagankose/sehirTweets/blob/master/tweetDumper.py) to retrieve tweets.
 
-To test the accuracy of the model, we split the data into %80 and %20 for training and test respectively. As the comparison metrics I used accuracy. The performance of the system is a follows.
+To test the accuracy of the model, we split the data into %80 and %20 for training and test respectively. As the comparison metrics I used accuracy. The performance of the system is indicated in Table 2. By the way, the code for the model is [here](https://github.com/skagankose/sehirTweets/blob/master/extendenPredictor.ipynb) (just the part with the title "Prediction Model"). Since, its a Ipython Notebook, I included its [HTML](https://github.com/skagankose/sehirTweets/blob/master/html/extendedPredictor.ipynb) version is for ease-of-read.
 
 ![Prediction Model Performance](skagankose.github.io/images/predictionModel.png)
 
 *Table 2: Performance of the prediction model using FastText as word embeddings.*
 
-
-
-By using the trained model, we assign label to each tweet within STN. By using tagged tweets, we determined the distribution of four topics for each user. For build the model in this part, we used Keras which is an open source neural network library. (We have used the version backed by TensorFlow.)
-
-In order to label each tweet, we had to train the model described above. First, we determined 3 different distinguishing Twitter pages for each of the categories found in Table 1. We retrieve last 3.000 tweets from each pages (which makes 12.000 tweets for each category) then, trained the model with these tweets and corresponding labels (categories).
-
-To test the accuracy of the model, we split the data as %80 training and %20 test. As comparison metrics we used accuracy and logarithmic loss (a.k.a. categorical cross-entropy). It is obvious that higher accuracy means betters performance and its vice versa for logarithmic loss. According to these metrics, results are presented in Table 2.
+%95 accuracy is pretty high for prediction where there are four different labels. By trusting these results, I consider the model applicative for its purpose. For label prediction, I used this model for the rest of the study.
 
 ## 2.3 Text Generation to Test the Prediction Model
 
