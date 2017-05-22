@@ -88,15 +88,20 @@ I used trained model to labeled each tweet within STN. Then, I found distributio
 
 ## 2.3 Text Generation to Test the Prediction Model
 
-Next, I wanted to check that the labels assigned by the prediction model is coherent. I decided to try a bit of an unusual technique. First, I divided users into four groups according to topic distribution of their tweets (by considering the most frequent category among the tweets of a particular user, as the group of that user). Then, I collected all the tweets together for users belonging to the same category. Using these tweets, four different LSTM models are trained. Then, by using these models, four different categories of texts are generated. I examined these (generated) texts to see whether they are coherent with the related topics. Some of the resulting (generated) texts are as follows.
+Next, I wanted to check that the labels assigned by the prediction model is coherent. I decided to try a bit of an unusual technique. First, I divided users into four groups according to topic distribution of their tweets (by considering the most frequent category among the tweets of a particular user, as the group of that user). Then, I collected all the tweets together for users belonging to the same category. Using these tweets, four different LSTM models are trained. Then, by using these models, four different categories of texts are generated. I examined these (generated) texts to see whether they are coherent with the related topics. Some of the resulting (generated) texts are as follows. Also the code can be found in [here](https://github.com/skagankose/sehirTweets/blob/master/extendedPredictor.ipynb) (at the part titled as "Creating Training Text").
 
 ![Prediction Model Performance](skagankose.github.io/images/generatedTexts.png)
 
 *Table(s) 3: Examples of LSTM-generated tweets belonging to four different categories: Politics, Daily, Art and Charity (respectively from top to bottom and two examples for each category).*
 
-As I can comprehend, each text is coherent with the related category. By examining these sentences it can be validated that the model had a fine job predicting labels.
+As far as I can comprehend, each text is coherent with the related category. By examining these sentences it can be validated that the model had a fine job predicting labels.
 
 # 3 Network Graph Analysis
+
+After making sure that the model is working properly, I moved onto analyzing the STN graph itself. First, I analyze the graph with respect to four different categories separately. I check the distribution of these categories in STN.
+
+
+The graphs according to distribution are presented in following figures. Also in Table 4, we showed frequency values of each category.
 
 # Conclusion
 
