@@ -80,10 +80,21 @@ To test the accuracy of the model, we split the data into %80 and %20 for traini
 
 %95 accuracy is pretty high for prediction where there are four different labels. By trusting these results, I consider the model applicative for its purpose. For label prediction, I used this model for the rest of the study.
 
+> I want to mention that the prediction model is created using [TensorFlow](https://www.tensorflow.org).
+> It is an open source software library for numerical computation using data flow graphs made by Google.
+> At this juncture, I want to indicate that in the context of this project, all the models related to deep neural networks is created using TensorFlow.
+
+I used trained model to labeled each tweet within STN. Then, I found distribution of categories that a particular user tweets about by simply,  calculating the frequency of label within tweets belonging to a particular user. For each user, I calculated four different values each of which represents the frequency of a certain category. Then, I saved them to a CSV file to use them with Gephi. The code for that part is [here](https://github.com/skagankose/sehirTweets/blob/master/extendedPredictor.ipynb) (under the title "Predicting Labels").
+
 ## 2.3 Text Generation to Test the Prediction Model
 
-- Test text generation model
-- Test label prediction model
+Next, I wanted to check that the labels assigned by the prediction model is coherent. I decided to try a bit of an unusual technique. First, I divided users into four groups according to topic distribution of their tweets (by considering the most frequent category among the tweets of a particular user, as the group of that user). Then, I collected all the tweets together for users belonging to the same category. Using these tweets, four different LSTM models are trained. Then, by using these models, four different categories of texts are generated. I examined these (generated) texts to see whether they are coherent with the related topics. Some of the resulting (generated) texts are as follows.
+
+![Prediction Model Performance](skagankose.github.io/images/generatedTexts.png)
+
+*Table(s) 3: Examples of LSTM-generated tweets belonging to four different categories: Politics, Daily, Art and Charity (respectively from top to bottom and two examples for each category).*
+
+As I can comprehend, each text is coherent with the related category. By examining these sentences it can be validated that the model had a fine job predicting labels.
 
 # 3 Network Graph Analysis
 
