@@ -88,7 +88,9 @@ I used trained model to labeled each tweet within STN. Then, I found distributio
 
 ## 2.3 Text Generation to Test the Prediction Model
 
-Next, I wanted to check that the labels assigned by the prediction model is coherent. I decided to try a bit of an unusual technique. First, I divided users into four groups according to topic distribution of their tweets (by considering the most frequent category among the tweets of a particular user, as the group of that user). Then, I collected all the tweets together for users belonging to the same category. Using these tweets, four different LSTM models are trained. Then, by using these models, four different categories of texts are generated. I examined these (generated) texts to see whether they are coherent with the related topics. Some of the resulting (generated) texts are as follows. Also the code can be found in [here](https://github.com/skagankose/sehirTweets/blob/master/extendedPredictor.ipynb) (at the part titled as "Creating Training Text").
+Next, I wanted to check that the labels assigned by the prediction model is coherent. I decided to try a bit of an unusual technique. First, I divided users into four groups according to topic distribution of their tweets (by considering the most frequent category among the tweets of a particular user, as the group of that user). Then, I collected all the tweets together for users belonging to the same category. The code until here can be found in [here](https://github.com/skagankose/sehirTweets/blob/master/extendedPredictor.ipynb) (at the part titled as "Creating Training Text").
+
+Using these tweets, four different LSTM models are trained using this [code](https://github.com/skagankose/sehirTweets/blob/master/trainLSTM.ipynb). Then, by using these models, four different categories of texts are generated using this [code](https://github.com/skagankose/sehirTweets/blob/master/generateText.ipynb). I examined these (generated) texts to see whether they are coherent with the related topics. Some of the resulting (generated) texts are as follows.
 
 ![Prediction Model Performance](skagankose.github.io/images/generatedTexts.png)
 
@@ -98,10 +100,30 @@ As far as I can comprehend, each text is coherent with the related category. By 
 
 # 3 Network Graph Analysis
 
-After making sure that the model is working properly, I moved onto analyzing the STN graph itself. First, I analyze the graph with respect to four different categories separately. I check the distribution of these categories in STN.
+After making sure that the model is working properly, I moved onto analyzing the STN graph itself. First, I analyze the graph with respect to four different categories separately. The graphs according to category distributions are presented in the Figure 2. Also frequencies of categories are shown in Table 4.
 
+![Politics and Daily Graph](skagankose.github.io/images/politicsDaily.png)
 
-The graphs according to distribution are presented in following figures. Also in Table 4, we showed frequency values of each category.
+*Figure 2.1: STN graphs according to categories Politics (left) and Daily (right).*
+
+![Art and Charity Graph](skagankose.github.io/images/artCharity.png)
+
+*Figure 2.1: STN graphs according to categories Art (left) and Charity (right).*
+
+![Category Frequencies](skagankose.github.io/images/categoryFrequency.png)
+
+*Table 4: The (percentage-wise) frequency of each category within STN.*
+
+I want to start interpreting the results by emphasizing that half of the tweets within STN are just daily conversations (which can also be called as chit chat). The frequency for the rest of the categories are close to each other.
+
+There are some points that are worth mentioning. First, users talking about the politics extensively are not in the center, (almost) all the of the bigger nodes in the Politics graph are periphery. The nodes in the center are no bigger than mediocre. Therefore, we can reason that talking extensively about politics is not the best way to gain popularity within Sehir University.
+
+Second, large nodes in the Art graph are concentrated around the center, meaning that users talking about art & culture have more followers within Sehir University.
+
+Moreover, in the Charity graph, it is seen that people who tweets about Charity are not concentrated in any specific region. Then, we can make the comment that there might be charitable people at all walks of Sehir University's society.
+
+Before finishing the interpretation of the graphs, I want to emphasize that daily conversations are evenly distributed across STN. Although, this results is expected, I wanted to mention it for the sake of completeness.
+
 
 # Conclusion
 
