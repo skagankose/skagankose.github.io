@@ -124,7 +124,13 @@ Moreover, in the Charity graph, it is seen that people who tweets about Charity 
 
 Before finishing the interpretation of the graphs, I want to emphasize that daily conversations are evenly distributed across STN. Although, this results is expected, I wanted to mention it for the sake of completeness.
 
-
 # Conclusion
+
+To wrap up, let me restate my steps during the project. I analyzed the tweets within STN.
+
+- First, I tried to retrieve Twitter users and their tweets, that are members of Sehir University by using snowball sampling.
+- Then, I determined the most popular four topics among retrieved tweets by using LDA.
+
+- Using these topics, we assign a tag to each tweet.  Then, according to tagged tweets, we found a topic distribution for each user. We tested the coherence of our tagging model with an LSTM network by generating various different texts and examining them. As the final part of the study, we draw four different graphs by representing users according to the topics distribution of their tweets. The significant finding extracted from these graphs are as follows. We found that people talking less about politics and more about art & culture tend to be at the center.
 
 # Future Work
