@@ -23,7 +23,7 @@ My aim in this research is to analyze the Twitter network of Istanbul Sehir Univ
 
 In the last part of this post, I will mention certain points that can be improved to take this analyzes into an higher level.
 
-# Network Construction
+# 1 Network Construction
 
 I started with construction of the Sehir University's Twitter network (STN). I use snowball sampling meaning that I collected the friends of my friends. [Here](https://github.com/skagankose/sehirTweets/blob/master/collectUsers.py) is the code for that. And, a list of my friends can be found [here](https://github.com/skagankose/sehirTweets/blob/master/data/coreUsers.txt). By saying friends, I mean followers and followees.
 
@@ -45,11 +45,11 @@ Note that colors and sizes of nodes are arranged according to [PageRank](http://
 > It is one of the leading visualization and exploration software for all kinds of graphs and networks.
 > Moreover, it is open-source and free.
 
-# Natural Language Processing Analysis
+# 2 Natural Language Processing Analysis
 
 After retrieving tweets, I moved onto the analysis part.
 
-## Topic Determination
+## 2.1 Topic Determination
 
 To assign a certain topic distribution to each user, I used their tweets. I assign a label to each tweet then, calculated frequency of categories. The first obstacle was that I didn't know which label to use meaning that I didn't know how to categorize tweets within Sehir University. To solve that, I zsed a topic modeling algorithm, more specifically, [latent dirichlet allocation](http://ai.stanford.edu/~ang/papers/nips01-lda.pdf) (LDA). I won't go into details of LDA but I can simply state that it clusters similar words together for given documents. By using LDA, I were able extract the most popular (four) topics in Sehir University.
 
@@ -65,17 +65,19 @@ First, I retrieved last 200 tweets of each user within STN and excluded the twee
 
 By examining the most frequent words belonging to clusters, I assign a title to each of them. For the rest of the study, I consider these categories as four (plausible) labels for tweets.
 
-## Label prediction
+## 2.2 Label prediction
 
-I used a neural network model to predict the labels of tweets. As a vector embedding, I used the [Turkish pre-trained model]((https://github.com/facebookresearch/fastText/blob/master/pretrained-vectors.md)) created using [FastText](https://arxiv.org/abs/1607.01759) algorithm.
+I used a (nearly) deep neural network model to predict the labels of tweets. As a vector embedding, I used the [Turkish pre-trained model]((https://github.com/facebookresearch/fastText/blob/master/pretrained-vectors.md)) created using [FastText](https://arxiv.org/abs/1607.01759) algorithm.
 
 To train the model, I retrieved tweets from different accounts related to topics that we found. We will give more detail about these process in part 3. By using the trained model, we assign label to each tweet within STN. By using tagged tweets, we determined the distribution of four topics for each user. For build the model in this part, we used Keras which is an open source neural network library. (We have used the version backed by TensorFlow.)
 
-## Text Generation to Test the Prediction Model
+## 2.3 Text Generation to Test the Prediction Model
 
-1. Test text generation model
-2. Test label prediction model
+- Test text generation model
+- Test label prediction model
 
-## Network Graph Analysis
+# 3 Network Graph Analysis
+
+# Conclusion
 
 # Future Work
