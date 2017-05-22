@@ -67,7 +67,7 @@ By examining the most frequent words belonging to clusters, I assign a title to 
 
 ## 2.2 Label prediction
 
-I used a (nearly) deep neural network model to assign a label to each tweet. As vector embeddings, I used the [Turkish pre-trained model]((https://github.com/facebookresearch/fastText/blob/master/pretrained-vectors.md)) created using [FastText](https://arxiv.org/abs/1607.01759) algorithm.
+I used a (nearly) deep neural network model to assign a label to each tweet. As vector embeddings, I used the [Turkish pre-trained model]((https://github.com/facebookresearch/fastText/blob/master/pretrained-vectors.md)) created using [FastText](https://arxiv.org/abs/1607.01759) algorithm. I used bag-of-words method to gather the words in a sentence.
 
 To train the prediction model, I used 3 domain-specific Twitter accounts each of which corresponds to a category in Table 1.
 Last 3.000 tweets retrieved from each account (which makes 9.000 tweets for each category) then, the model is trained using these tweets by setting labels according to the belonging account. (For example, we label all the tweets retrieved from [NTV Kültür Sanat](https://twitter.com/ntvkultursanat) as "art".) Again, I used this [code](https://github.com/skagankose/sehirTweets/blob/master/tweetDumper.py) to retrieve tweets.
@@ -108,7 +108,7 @@ After making sure that the model is working properly, I moved onto analyzing the
 
 ![Art and Charity Graph](skagankose.github.io/images/artCharity.png)
 
-*Figure 2.1: STN graphs according to categories Art (left) and Charity (right).*
+*Figure 2.2: STN graphs according to categories Art (left) and Charity (right).*
 
 ![Category Frequencies](skagankose.github.io/images/categoryFrequency.png)
 
@@ -122,15 +122,25 @@ Second, large nodes in the Art graph are concentrated around the center, meaning
 
 Moreover, in the Charity graph, it is seen that people who tweets about Charity are not concentrated in any specific region. Then, we can make the comment that there might be charitable people at all walks of Sehir University's society.
 
-Before finishing the interpretation of the graphs, I want to emphasize that daily conversations are evenly distributed across STN. Although, this results is expected, I wanted to mention it for the sake of completeness.
+Before finishing the interpretation of the graphs, I want to emphasize that daily conversations are evenly distributed across STN.
+> Although, this results is expected, I wanted to mention that for the sake of completeness.
 
 # Conclusion
 
-To wrap up, let me restate my steps during the project. I analyzed the tweets within STN.
+I merged various algorithms and developed a methodology to categorize tweets and revel topic-distribution of a particular social network. In this study, I analyzed Sehir University's Twitter Network using this methodology.
+
+To wrap up, let me restate my steps and findings during the project.
 
 - First, I tried to retrieve Twitter users and their tweets, that are members of Sehir University by using snowball sampling.
 - Then, I determined the most popular four topics among retrieved tweets by using LDA.
-
-- Using these topics, we assign a tag to each tweet.  Then, according to tagged tweets, we found a topic distribution for each user. We tested the coherence of our tagging model with an LSTM network by generating various different texts and examining them. As the final part of the study, we draw four different graphs by representing users according to the topics distribution of their tweets. The significant finding extracted from these graphs are as follows. We found that people talking less about politics and more about art & culture tend to be at the center.
+- Considering each popular topic as a label, I created a model to predict labels of tweets. FastText is used to represent word embedding and a deep neural network model used for prediction.
+- To test the coherence of this label-predictor model, I constructed an LSTM network to generate texts using tweets in each category. I found that the prediction model is working properly.
+- Finally, I draw four different category-specific graphs by representing users according to the topics distribution of their tweets. Significant findings from these graphs can be gathered in one sentence as "people talking less about politics and more about art & culture tend to be more popular in Sehir University".
 
 # Future Work
+
+There are couple points I can think of to improve this research. The obvious way to improve the analysis is to collect more tweets. I were able to collect only last 200 tweets of each user, however, collecting more tweets will reveal more about characteristic of users. Another improvement might be using recursive neural network instead of bag-of-words for gathering words before feeding the neural network model. Although the overall performance of our model is fine, I believe that, using recursive neural network can increase the performance considerably.
+
+To further analyze the STN, I suggest constructing a sub-graph of STN. To our understanding, the graph represented above does not indicating the real friendships between users and therefore, contracting a friends graph within Sehir University can reveal more information about the users.
+
+The final point I wanted to draw attention to is that the STN graph we constructed above does not indicate the real friendships between users. The edge are constructed using follower and followee relations and cannot be interpreted as indicating friendships. I believe that contracting a graph that shows (real) friendships relations might be reveal more information about the members of Sehir University.
