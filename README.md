@@ -1,2 +1,2 @@
 # skagankose.github.io
-Website of my recent project - https://skagankose.github.io
+Website for one of my recent projects - https://skagankose.github.io
