@@ -35,7 +35,7 @@ The data, in this stage, had many users that are not (actually) belong to Sehir 
 
 The resulting network composed of 1,353 nodes (users) and 26,439 directed edges (according to followers and followees). Here is the graph.
 
-![STN Graph](skagankose.github.io/images/pageRank.png)
+![STN Graph](/images/pageRank.png)
 
 *Figure 1: Sehir University's Twitter network with PageRank based representation (where big nodes mean high popularity).*
 
