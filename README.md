@@ -35,7 +35,7 @@ The data, in this stage, had many users that are not (actually) belong to Sehir 
 
 The resulting network composed of 1,353 nodes (users) and 26,439 directed edges (according to followers and followees). Here is the graph.
 
-![STN Graph](/images/pageRank.png)
+![STN Graph](images/pageRank.png)
 
 *Figure 1: Sehir University's Twitter network with PageRank based representation (where big nodes mean high popularity).*
 
@@ -58,7 +58,7 @@ First, I retrieved last 200 tweets of each user within STN by excluding the twee
 > The [first file](https://github.com/skagankose/sehirTweets/blob/master/tweetDumper.py) is for retrieving recent tweets of users within STN.
 > And retrieved tweets are cleaned (e.g. stop words are removed) using the [second file](https://github.com/skagankose/sehirTweets/blob/master/tweetCleaner.py).
 
-![Word Clusters](skagankose.github.io/images/frequentWords.png)
+![Word Clusters](images/frequentWords.png)
 
 *Table 1: Frequent words belonging to clusters found using LDA with appropriate titles assigned to them.*
 
@@ -73,7 +73,7 @@ Last 3,000 tweets retrieved from each account (which makes 9,000 tweets for each
 
 To test the accuracy of the model, I split the data into %80 and %20 as train and test respectively. As the comparison metric, I used accuracy. The performance of the system is indicated in Table 2. By the way, the code for the prediction model is [here](https://github.com/skagankose/sehirTweets/blob/master/extendedPredictor.ipynb) (just the part with the title "Prediction Model"). Since, the actual outputs are too long, I included only portions of the outputs for representation purposes.
 
-![Prediction Model Performance](skagankose.github.io/images/predictionModel.png)
+![Prediction Model Performance](images/predictionModel.png)
 
 *Table 2: Performance of the prediction model using FastText as word embeddings.*
 
@@ -91,7 +91,7 @@ Next, I wanted to check that the labels assigned by the prediction model is cohe
 
 Using these tweets, four different LSTM models are trained using [this code](https://github.com/skagankose/sehirTweets/blob/master/trainLSTM.ipynb). Then, by using these models, four different categories of texts are generated using [this code](https://github.com/skagankose/sehirTweets/blob/master/generateText.ipynb). I examined these (generated) texts to see whether they are coherent with the related topics. Some of the resulting (generated) texts are as follows.
 
-![Prediction Model Performance](skagankose.github.io/images/generatedTexts.png)
+![Prediction Model Performance](images/generatedTexts.png)
 
 *Table(s) 3: Examples of LSTM-generated tweets belonging to four different categories: Politics, Daily, Art and Charity (respectively from top to bottom and two examples for each category).*
 
@@ -101,15 +101,15 @@ As far as I can comprehend, each text is coherent with the related category. By 
 
 After making sure that the model is working properly, I moved onto analyzing the STN graph itself. First, I analyze the graph with respect to four different categories separately. The graphs according to category distributions are presented in the Figure 2. Also frequencies of categories in STN are shown in Table 4.
 
-![Politics and Daily Graph](skagankose.github.io/images/politicsDaily.png)
+![Politics and Daily Graph](images/politicsDaily.png)
 
 *Figure 2.1: STN graphs according to categories Politics (left) and Daily (right).*
 
-![Art and Charity Graph](skagankose.github.io/images/artCharity.png)
+![Art and Charity Graph](images/artCharity.png)
 
 *Figure 2.2: STN graphs according to categories Art (left) and Charity (right).*
 
-![Category Frequencies](skagankose.github.io/images/categoryFrequency.png)
+![Category Frequencies](images/categoryFrequency.png)
 
 *Table 4: The (percentage-wise) frequency of each category within STN.*
 
